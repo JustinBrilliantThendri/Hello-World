@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Inconsolata:200,300,regular,500,600,700,800,900);
+
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+    font-family : 'Inconsolata', sans-serif;
+}
+
+body{
+    display : grid;
+    place-items : center;
+    height : 100vh;
+    background : #252B48;
+}
+
+h1{
+    color : #5B9A8B;
+    font-size : 50px;
+    position : relative;
+    overflow : hidden;
+    white-space : nowrap;
+    width : 0ch;
+    animation : typing 3s .5s steps(12) forwards;
+}
+
+h1::after{
+    content : '';
+    position : absolute;
+    height : 100%;
+    top : 0;
+    right : 0;
+    width : 5px;
+    background : #F7E987;
+    animation : blinking 1s 4s steps(1) infinite;
+}
+
+@keyframes blinking{
+    0%, 100%{
+        opacity : 0;
+    }
+    50%{
+        opacity : 1;
+    }
+}
+
+@keyframes typing{
+    0%{
+        width : 0ch;
+    }
+    100%{
+        width : 12ch;
+    }
+}
+
+@media (max-width : 400px){
+    h1{
+        font-size : 40px;
+    }
+    h1::after{
+        width : 2.5px;
+    }
+}
